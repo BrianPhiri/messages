@@ -9,12 +9,13 @@ amqp.connect(AMQP_URL, function(err, conn){
     conn.createChannel(function(err, ch){
         if(err) throw err;
         var exchange = 'greetings'
-
+        // using fanout
         ch.assertExchange(exchange, 'fanout', {durable:false})
-
+        // esstablish a queue (Rabbit creates it for us)
         ch.assertQueue('', {exclusive:true}, function(err, q){
             console.log("waiting for message....")
 
+            // bind the exchange to the queue
             ch.bindQueue(q.queue, exchange,'');
 
             ch.consume(q.queue, function(msg){
