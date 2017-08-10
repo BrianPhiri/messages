@@ -1,0 +1,22 @@
+{
+  "name": "rabbitmq",
+  "version": "1.0.0",
+  "description": "learning about messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianPhiri/messages.git"
+  },
+  "author": "BrianPhiri (brianphiri.9523@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianPhiri/messages/issues"
+  },
+  "homepage": "https://github.com/BrianPhiri/messages#readme",
+  "dependencies": {
+    "amqplib": "^0.5.1"
+  }
+}
