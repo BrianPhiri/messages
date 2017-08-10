@@ -16,7 +16,7 @@ amqp.connect(AMQP_URL, function(err, conn){
         // going to use the fanout exchnage
         ch.assertExchange(exchange, 'fanout', {durable:false})
         // publish to that message
-        ch.publish(ex, '', new Buffer(msg));
+        ch.publish(exchange, '', new Buffer(msg));
         console.log('sent message');
     });
 
