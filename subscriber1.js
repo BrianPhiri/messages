@@ -10,7 +10,7 @@ amqp.connect(AMQP_URL, function(err, conn){
     conn.createChannel(function(err, ch){
         if(err) throw err;
         var exchange = 'fruits'
-        var key = 'banana.*.big'
+        var key = '*.*.big'
         ch.assertExchange(exchange, 'topic', {durable:false});
         ch.assertQueue('', {exclusive:true}, function(err, q){
             ch.bindQueue(q.queue, exchange, key)
