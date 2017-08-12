@@ -1,7 +1,6 @@
 const amqp = require('amqplib/callback_api')
 
 // url to my online rabbitmq
-// var AMQP_URL = 'amqp://ehlbpomi:AODIFxJKO0QmTUqke2_FHjy5AKKcQ5ed@wasp.rmq.cloudamqp.com/ehlbpomi'
 var AMQP_URL = 'amqp://localhost'
 
 amqp.connect(AMQP_URL, function(err, conn){
@@ -25,7 +24,7 @@ amqp.connect(AMQP_URL, function(err, conn){
         // going to use the fanout exchnage
         ch.assertExchange(exchange, 'fanout', {durable:false})
         // publish to that message
-        ch.publish(exchange, '', new Buffer(msg));
+        ch.publish(exchange, '', new Buffer(JSON.stringify(msg)));
         console.log('sent message');
     });
 

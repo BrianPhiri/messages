@@ -17,7 +17,8 @@ amqp.connect(AMQP_URL, function(err, conn){
             ch.bindQueue(q.queue, exchange,'');
 
             ch.consume(q.queue, function(msg){
-                console.log(msg.content.toJSON())
+                // console.log(msg.content.toJSON())
+                console.log(JSON.parse(msg.content));
             })
         })
     })

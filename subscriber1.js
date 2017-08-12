@@ -1,7 +1,6 @@
 const amqp = require('amqplib/callback_api')
 
 // url to my online rabbitmq
-// var AMQP_URL = 'amqp://ehlbpomi:AODIFxJKO0QmTUqke2_FHjy5AKKcQ5ed@wasp.rmq.cloudamqp.com/ehlbpomi'
 var AMQP_URL = 'amqp://localhost'
 
 // topic
